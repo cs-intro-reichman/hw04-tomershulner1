@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+        System.out.println(capVowelsLowRest("One two tHRee world"));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -98,6 +98,7 @@ public class StringOps {
     public static boolean isVowel(char chr) {
         boolean result = false;
         String vowels = "aeiou";
+        chr = toLower(chr);
         for (int i = 0; i < vowels.length(); i++) {
             if (vowels.charAt(i) == chr) result = true;
         }
