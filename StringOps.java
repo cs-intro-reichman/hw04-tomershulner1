@@ -22,13 +22,6 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-
-        System.out.println(camelCase("Hello World"));
-        System.out.println(camelCase("HELLO world"));
-        System.out.println(camelCase(" tWo wordS"));
-        System.out.println(camelCase("world"));
-        System.out.println(camelCase("   Intro to coMPUter sCIEncE "));
-
         
     }
 
@@ -43,7 +36,7 @@ public class StringOps {
                 continue;
             }
             is_current_char_vowel = isVowel(current_char);
-            if (is_current_char_vowel && current_char > 90) {
+            if (is_current_char_vowel && current_char >= 90) {
                 current_char = (char)(current_char - 32);
 
             }
@@ -86,8 +79,20 @@ public class StringOps {
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int how_much = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) how_much++; 
+        }
+
+        int[] indexes = new int[how_much];
+        int index = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                indexes[index] = i;
+                index++;
+            }
+        }
+        return indexes;
     }
 
     public static boolean isVowel(char chr) {
